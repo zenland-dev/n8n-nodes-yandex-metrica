@@ -2,6 +2,13 @@ name: Bug report
 description: Something in the node behaves differently than documented
 labels: [bug]
 body:
+  - type: markdown
+    attributes:
+      value: >
+        Issues here are public. Remove the OAuth token, the measurement token and any
+        visitor data before pasting anything — a ClientID and an email address in a
+        sample row are personal data.
+
   - type: textarea
     id: what-happened
     attributes:
@@ -15,37 +22,61 @@ body:
     attributes:
       label: Versions
       description: The n8n version and the version of this package.
-      placeholder: "n8n 2.3.1, n8n-nodes-getcourse 0.1.0"
+      placeholder: "n8n 2.3.1, n8n-nodes-yandex-metrica 0.0.5"
     validations:
       required: true
 
   - type: dropdown
-    id: node
+    id: resource
     attributes:
-      label: Which node
+      label: Which resource
       options:
-        - GetCourse (Tech API)
-        - GetCourse Legacy (Import/Export API)
-        - GetCourse Trigger
+        - Report
+        - Log
+        - Counter
+        - Goal
+        - Segment
+        - Filter
+        - Operation
+        - Annotation
+        - Access
+        - Offline Conversion
+        - Call
+        - Chat
+        - Advertising Cost
+        - Visitor Parameter
+        - CRM Contact
+        - CRM Order
+        - Event (Measurement Protocol)
     validations:
       required: true
 
   - type: input
     id: operation
     attributes:
-      label: Resource and operation
-      placeholder: "Order → Get"
+      label: Operation
+      placeholder: "Get Table"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: credential
+    attributes:
+      label: Which credential
+      options:
+        - Yandex Metrica API (pasted token)
+        - Yandex Metrica OAuth2 API
     validations:
       required: true
 
   - type: textarea
     id: response
     attributes:
-      label: What GetCourse answered
+      label: What Metrica answered
       description: >
-        GetCourse likes to reply 200 OK with success: false, so paste the body, not only
-        the status code. Remove the developer key, the school key, the account secret key
-        and personal data first — issues here are public.
+        The error body, not only the status code. Metrica names the cause in
+        errors[0].error_type, and that field is what turns a bare "Access is denied"
+        into something actionable.
       render: json
 
   - type: textarea
@@ -53,6 +84,6 @@ body:
     attributes:
       label: Anything else
       description: >
-        For an export: the export id and whether it ever left the processing state.
-        For the trigger: the source — a GetCourse process or a Tech API subscription —
-        and one sample payload with the personal data removed.
+        For a report: the metrics, dimensions and date range, which matter more than
+        anything else. For Logs API: the request status and how much of the 10 GB
+        storage the counter had left. For an upload: the column names of the file.

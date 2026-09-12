@@ -13,13 +13,15 @@ body:
   - type: input
     id: endpoint
     attributes:
-      label: The GetCourse endpoint, if you know it
-      placeholder: "GET /pl/api/v1/deals/{id}"
+      label: The Metrica method, if you know it
+      placeholder: "GET /management/v1/counter/{counterId}/access_filters"
 
   - type: textarea
     id: docs
     attributes:
       label: Where it is documented
       description: >
-        A link to the Tech API redoc page or to help/api — GetCourse documents the two
-        APIs in different places, and they do not overlap.
+        A link to the page on yandex.ru/dev/metrika. Fifteen management methods were
+        left out of the first version on purpose — accounts, delegates, access filters,
+        undeleting a counter, the client list and the Yandex Cloud export — so if yours
+        is one of those, say what you need it for and it can be added.
