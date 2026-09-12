@@ -1,0 +1,46 @@
+{
+	"node": "n8n-nodes-yandex-metrica.yandexMetrica",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Analytics", "Marketing & Content", "Data & Storage"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://github.com/zenland-dev/n8n-nodes-yandex-metrica?tab=readme-ov-file#credentials"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/zenland-dev/n8n-nodes-yandex-metrica?tab=readme-ov-file"
+			}
+		]
+	},
+	"alias": [
+		"Yandex Metrica",
+		"Yandex Metrika",
+		"Яндекс Метрика",
+		"Метрика",
+		"Analytics",
+		"Аналитика",
+		"Web Analytics",
+		"Веб-аналитика",
+		"Counter",
+		"Счётчик",
+		"Goal",
+		"Цель",
+		"Conversion",
+		"Конверсия",
+		"Logs API",
+		"Logs",
+		"Логи",
+		"Offline Conversion",
+		"Офлайн-конверсия",
+		"Measurement Protocol",
+		"CDP",
+		"CRM",
+		"Сквозная аналитика",
+		"ClientID",
+		"Segment",
+		"Сегмент"
+	]
+}
